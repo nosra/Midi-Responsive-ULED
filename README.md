@@ -1,5 +1,5 @@
 # Midi-Responsive-ULED
-A python script that lights up portions of ULED depending on the MIDI notes played
+A python script that lights up portions of ULED depending on the MIDI notes played. Utilizes the mido python library.
 # How to use:
 Change the midi_device_name to the MIDI device name. "Digital Piano 0" is the Yamaha P45.\
 Run the program to enable, press CTRL+C to disable the program.\
