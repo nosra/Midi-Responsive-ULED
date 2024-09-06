@@ -10,6 +10,9 @@ from collections import deque
 
 inputs = mido.get_input_names()
 
+# [usr] MIDI device name
+midi_device_name = 'Digital Piano 0'
+
 # detect inputs
 if len(inputs) == 0:
     print("[!] No inputs detected: " + str(inputs))
@@ -163,7 +166,7 @@ signal.signal(signal.SIGINT, signal_handler)
 
 # looking for the piano
 try:
-    piano = mido.open_input('Digital Piano 0', callback=lambda msg: asyncio.run_coroutine_threadsafe(handle_keypress(msg), loop))
+    piano = mido.open_input(midi_device_name, callback=lambda msg: asyncio.run_coroutine_threadsafe(handle_keypress(msg), loop))
 except Exception as e:
     print(f"[!] Piano not detected, aborting... {e}")
     sys.exit(0)
